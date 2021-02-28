@@ -8,6 +8,7 @@ import com.auth.domain.User;
 import com.auth.domain.dto.UserDTO;
 import com.auth.payload.JWTLoginSucessReponse;
 import com.auth.payload.LoginRequest;
+import com.auth.payload.Response;
 import com.auth.security.JwtTokenProvider;
 import com.auth.service.UserService;
 import com.auth.service.impl.CustomUserDetailsService;
@@ -62,11 +63,7 @@ public class UserController {
         User user = userService.findByUsername(loginRequest.getUsername());
 
         if (user != null) {
-            if (user.getStatus() == 0){ //|| user.getRoles() == null || user.getRoles().isEmpty()) {
-                Map<String, String> errorMap1 = new HashMap<>();
-                errorMap1.put("message", "Your account is not activated, please contact Administrator");
-                return new ResponseEntity<>(errorMap1, HttpStatus.UNAUTHORIZED);
-            }
+            userService.checkRoles(user);
         }
 
         Authentication authentication = authenticationManager.authenticate(
@@ -82,35 +79,42 @@ public class UserController {
     }
 
     @PostMapping(path = "/register-user", consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE})
-    public ResponseEntity registerUser(@Valid @RequestBody UserDTO user, BindingResult result) {
+    public ResponseEntity<Response> registerUser(@Valid @RequestBody UserDTO user, BindingResult result) {
         log.info("Request to add user");
         // Validate passwords match
         userValidator.validate(user, result);
 
-        ResponseEntity<?> errorMap = mapValidationErrorService.MapValidationService(result);
-        if (errorMap != null) return errorMap;
+//        ResponseEntity<?> errorMap = mapValidationErrorService.MapValidationService(result);
+//        if (errorMap != null) return errorMap;
 
         UserDTO newUser = userService.saveUser(user);
 
-        return new ResponseEntity<>(responseBuilder.successResponse.apply(newUser), HttpStatus.CREATED);
+        return new ResponseEntity<>(responseBuilder.successResponse.apply(newUser,null), HttpStatus.CREATED);
     }
 
-    @PatchMapping("/update-user/{id}")
+    @PatchMapping(path="/update-user/{id}",consumes = {MediaType.APPLICATION_JSON_VALUE},produces={MediaType.APPLICATION_JSON_VALUE})
    // @PreAuthorize("hasRole('ADMIN') or hasRole('SUPER')")
-    public ResponseEntity updateUser(@PathVariable Integer id, @Valid @RequestBody User user, BindingResult result) {
+    public ResponseEntity<?> updateUser(@PathVariable Integer id, @Valid @RequestBody User user, BindingResult result) {
 
         ResponseEntity<?> errorMap = mapValidationErrorService.MapValidationService(result);
         if (errorMap != null) return errorMap;
 
         User updatedUser = userService.updateUser(id, user);
 
-        return  ResponseEntity.ok(userResponseBuilder.successResponse.apply(updatedUser));
+        return  ResponseEntity.ok(userResponseBuilder.successResponse.apply(updatedUser,null));
     }
 
     @GetMapping("/all-users")
     //@PreAuthorize("hasRole('ADMIN') or hasRole('SUPER')")
-    public List<User> findAll() {
-        return userService.findAll();
+    public ResponseEntity<Response> findAll() {
+
+        return  ResponseEntity.ok(userResponseBuilder.successResponse.apply(null,userService.findAll()));
+    }
+
+    @GetMapping("/find-by-id/{id}")
+    //@PreAuthorize("hasRole('ADMIN') or hasRole('SUPER')")
+    public ResponseEntity<Response> findById(@PathVariable Integer id) {
+        return  ResponseEntity.ok(userResponseBuilder.successResponse.apply(userService.findById(id),null));
     }
 
     @GetMapping("/roles")

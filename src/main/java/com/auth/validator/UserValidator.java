@@ -3,6 +3,7 @@ package com.auth.validator;
 import com.auth.domain.User;
 
 import com.auth.domain.dto.UserDTO;
+import com.auth.exceptions.InvalidParameterException;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
@@ -20,11 +21,11 @@ public class UserValidator implements Validator {
         UserDTO user = (UserDTO) object;
        
         if(user.getPassword().length() <6){
-            errors.rejectValue("password","Length", "Password must be at least 6 characters");
+            throw new InvalidParameterException("Password must be at least 6 characters");
         }
 
         if(!user.getPassword().equals(user.getConfirmPassword())){
-            errors.rejectValue("confirmPassword","Match", "Passwords must match");
+            throw new InvalidParameterException("Passwords must match");
 
         }
 

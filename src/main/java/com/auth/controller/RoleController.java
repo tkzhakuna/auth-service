@@ -1,7 +1,7 @@
 package com.auth.controller;
 
 import com.auth.domain.Role;
-import com.auth.domain.dto.UserDTO;
+
 import com.auth.service.RoleService;
 import com.auth.service.impl.MapValidationErrorService;
 import com.auth.util.ResponseBuilder;
@@ -34,28 +34,28 @@ public class RoleController {
         if(errorMap != null)
             return errorMap;
 
-        return new ResponseEntity<>(responseBuilder.successResponse.apply(roleService.addNew(role)), HttpStatus.OK);
+        return new ResponseEntity<>(responseBuilder.successResponse.apply(roleService.addNew(role),null), HttpStatus.OK);
 
     }
 
-    @PostMapping(path="/update/{id}",consumes = {MediaType.APPLICATION_JSON_VALUE}, produces={MediaType.APPLICATION_JSON_VALUE})
+    @PutMapping(path="/update/{id}",consumes = {MediaType.APPLICATION_JSON_VALUE}, produces={MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity<?> update(@PathVariable Integer id, @Valid @RequestBody Role role, BindingResult result){
         ResponseEntity<?> errorMap = mapValidationErrorService.MapValidationService(result);
         if(errorMap != null)
             return errorMap;
 
-        return new ResponseEntity<>(responseBuilder.successResponse.apply(roleService.update(id,role)), HttpStatus.OK);
+        return new ResponseEntity<>(responseBuilder.successResponse.apply(roleService.update(id,role),null), HttpStatus.OK);
 
     }
 
     @GetMapping(path="/findbyid/{id}", produces={MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity<?> findById(@PathVariable Integer id){
-        return new ResponseEntity<>(responseBuilder.successResponse.apply(roleService.findById(id)), HttpStatus.OK);
+        return new ResponseEntity<>(responseBuilder.successResponse.apply(roleService.findById(id),null), HttpStatus.OK);
 
     }
     @GetMapping(path="/findall", produces={MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity<?> findAll(){
-        return new ResponseEntity<>(roleService.findAll(), HttpStatus.OK);
+        return new ResponseEntity<>(responseBuilder.successResponse.apply(null,roleService.findAll()), HttpStatus.OK);
 
     }
 }

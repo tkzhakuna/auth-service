@@ -15,8 +15,11 @@ import com.auth.exceptions.UsernameAlreadyExistsException;
 import com.auth.repository.RoleRepository;
 import com.auth.repository.UserRepository;
 import com.auth.service.UserService;
+
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -47,6 +50,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserDTO saveUser(UserDTO userDTO) {
         User user = new User();
+
         try {
             if (userRepository.findByUsername(userDTO.getUsername()) != null) {
                 throw new UsernameAlreadyExistsException("Username '" + userDTO.getUsername() + "' already exists");
@@ -60,7 +64,7 @@ public class UserServiceImpl implements UserService {
         }
 
 
-        EmployeeDTO employee = null;
+        EmployeeDTO employee;
         if (!Objects.isNull(userDTO.getEmployeeId()) && userDTO.getEmployeeId() > 0) {
             try {
                 //check employee
@@ -69,19 +73,19 @@ public class UserServiceImpl implements UserService {
                 throw new UnexpectedException("Employee details not found, Please make sure user is registered in the employee details");
             }
 
-            if (Objects.isNull(employee)) {
+            if (Objects.isNull(employee.getId())) {
                 throw new NotFoundException("Employee not found ");
             }
 
             //check if emails match
-            if (employee.getEmail()==null||!employee.getEmail().equals(userDTO.getUsername())) {
+            if (employee.getEmail() == null || !employee.getEmail().equals(userDTO.getUsername())) {
                 throw new NotFoundException("Employee with provided email not found");
             }
         } else {
             throw new InvalidParameterException("Invalid Employee Id supplied");
         }
 
-        if (employee != null) {
+        if (!Objects.isNull(employee.getId())) {
             //Add Employee
             user.setEmployeeId(employee.getId());//Fix to dynamically add employee
         }
@@ -117,35 +121,35 @@ public class UserServiceImpl implements UserService {
         if (checkUniqueUser(user.getUsername(), user.getId()) != null) {
             throw new UsernameAlreadyExistsException("Username '" + user.getUsername() + "' already exists");
         } else {
-            Set<String> strRoles = user.getStrRoles();
+            //Set<String> strRoles = user.getStrRoles();
             Set<Role> roles = new HashSet<>();
 
-            if (strRoles != null) {
+//            if (strRoles != null) {
+//
+//                strRoles.forEach(role -> {
+//                    switch (role) {
+//                        case "admin" -> {
+//                            Role adminRole = roleRepository.findByName("ROLE_ADMIN")
+//                                    .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
+//                            roles.add(adminRole);
+//                        }
+//                        case "user" -> {
+//                            Role userRole = roleRepository.findByName("ROLE_USER")
+//                                    .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
+//                            roles.add(userRole);
+//                        }
+//                        case "super" -> {
+//                            Role superRole = roleRepository.findByName("ROLE_SUPER")
+//                                    .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
+//                            roles.add(superRole);
+//                        }
+//                        default -> throw new RuntimeException("Error: Role is not found.");
+//                    }
+//                });
+//            }
 
-                strRoles.forEach(role -> {
-                    switch (role) {
-                        case "admin" -> {
-                            Role adminRole = roleRepository.findByName("ROLE_ADMIN")
-                                    .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
-                            roles.add(adminRole);
-                        }
-                        case "user" -> {
-                            Role userRole = roleRepository.findByName("ROLE_USER")
-                                    .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
-                            roles.add(userRole);
-                        }
-                        case "super" -> {
-                            Role superRole = roleRepository.findByName("ROLE_SUPER")
-                                    .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
-                            roles.add(superRole);
-                        }
-                        default -> throw new RuntimeException("Error: Role is not found.");
-                    }
-                });
-            }
 
-
-            user.getRoles().addAll(roles);
+            //user.getRoles().addAll(roles);
 
             user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
             //Username has to be unique (exception)
@@ -201,5 +205,18 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<Role> findRoles() {
         return roleRepository.findAll();
+    }
+
+    @Override
+    public void checkRoles(User user) {
+        if ((user.getStatus() == 0)|| user.getRoles() == null || user.getRoles().isEmpty()) {
+            throw new RuntimeException("Access denied, please contact administrator");
+        }
+    }
+
+    @Override
+    public User findById(Integer id) {
+        return userRepository.findById(id).orElseThrow(()->
+                new NotFoundException("User not found"));
     }
 }

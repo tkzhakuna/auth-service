@@ -15,4 +15,7 @@ public interface UserService  {
     List<User> findAll();
     List<Role>findRoles();
 
+    void checkRoles(User user);
+
+    User findById(Integer id);
 }

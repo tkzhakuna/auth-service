@@ -6,22 +6,35 @@ import javax.persistence.Column;
 import javax.persistence.Transient;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 
 @Data
 public class UserDTO {
-    @Email(message = "Username needs to be an email")
-    @NotBlank(message = "username is required")
-    @Column(unique = true)
+    @Email(message = "Username must be an email")
+    @NotNull @NotBlank(message = "username is required")
+    @Column(unique = true,nullable = false)
     private String username;
-    @NotBlank(message = "Please enter your full name")
+   @NotNull @NotBlank(message = "Please enter your full name")
+   @Column(nullable = false)
     private String fullname;
     //@JsonIgnore
-    @NotBlank(message = "Password field is required")
+    @NotNull @NotBlank(message = "Password field is required")
+    @Column(nullable = false)
     private String password;
     //@JsonIgnore
     @Transient
     private String confirmPassword;
-   private Integer employeeId;
+    private Integer employeeId;
 
+    @Override
+    public String toString() {
+        return "UserDTO{" +
+                "username='" + username + '\'' +
+                ", fullname='" + fullname + '\'' +
+                ", password='" + password + '\'' +
+                ", confirmPassword='" + confirmPassword + '\'' +
+                ", employeeId=" + employeeId +
+                '}';
+    }
 }

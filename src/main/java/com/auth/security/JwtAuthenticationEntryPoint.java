@@ -3,6 +3,7 @@ package com.auth.security;
 import com.auth.exceptions.InvalidLoginResponse;
 import com.google.gson.Gson;
 
+
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.stereotype.Component;
@@ -24,7 +25,8 @@ public class JwtAuthenticationEntryPoint implements AuthenticationEntryPoint {
 
         httpServletResponse.setContentType("application/json");
         httpServletResponse.setStatus(401);
-        httpServletResponse.getWriter().print(jsonLoginResponse);
+        //httpServletResponse.getWriter().print(jsonLoginResponse);
+        httpServletResponse.sendError(HttpServletResponse.SC_UNAUTHORIZED	, "Access dinied, please log in first");
 
 
     }
