@@ -38,15 +38,15 @@ public class RoleController {
 
     }
 
-    @PutMapping(path="/update/{id}",consumes = {MediaType.APPLICATION_JSON_VALUE}, produces={MediaType.APPLICATION_JSON_VALUE})
-    public ResponseEntity<?> update(@PathVariable Integer id, @Valid @RequestBody Role role, BindingResult result){
-        ResponseEntity<?> errorMap = mapValidationErrorService.MapValidationService(result);
-        if(errorMap != null)
-            return errorMap;
-
-        return new ResponseEntity<>(responseBuilder.successResponse.apply(roleService.update(id,role),null), HttpStatus.OK);
-
-    }
+//    @PutMapping(path="/update/{id}",consumes = {MediaType.APPLICATION_JSON_VALUE}, produces={MediaType.APPLICATION_JSON_VALUE})
+//    public ResponseEntity<?> update(@PathVariable Integer id, @Valid @RequestBody Role role, BindingResult result){
+//        ResponseEntity<?> errorMap = mapValidationErrorService.MapValidationService(result);
+//        if(errorMap != null)
+//            return errorMap;
+//
+//        return new ResponseEntity<>(responseBuilder.successResponse.apply(roleService.update(id,role),null), HttpStatus.OK);
+//
+//    }
 
     @GetMapping(path="/findbyid/{id}", produces={MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity<?> findById(@PathVariable Integer id){

@@ -117,6 +117,7 @@ public class UserController {
         return  ResponseEntity.ok(userResponseBuilder.successResponse.apply(userService.findById(id),null));
     }
 
+
     @GetMapping("/roles")
     //@PreAuthorize("hasRole('ADMIN') or hasRole('SUPER')")
     public List<Role> findRoles() {

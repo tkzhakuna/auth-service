@@ -49,7 +49,6 @@ public class User implements UserDetails {
     @CreatedDate
     private LocalDateTime createAt;
     private LocalDateTime updateAt;
-    @JsonIgnore
     @Column(name="status")
 	private Integer status;
 
@@ -62,8 +61,8 @@ public class User implements UserDetails {
 				inverseJoinColumns = @JoinColumn(name = "role_id"))
 	private Set<Role> roles = new HashSet<>();
    
-//    @Transient
-//   private Set<String> strRoles=new HashSet<>();
+   @Transient
+  private Set<String> strRoles=new HashSet<>();
 
     @PrePersist
     protected void onCreate(){
@@ -93,7 +92,7 @@ public class User implements UserDetails {
     
     public  User build(User user) {
     	List<GrantedAuthority> authorities = getRoles().stream()
-				.map(role -> new SimpleGrantedAuthority(role.getName()))
+				.map(role -> new SimpleGrantedAuthority(role.getName().toString()))
 				.collect(Collectors.toList());
 
 		return new User(
