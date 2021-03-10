@@ -113,7 +113,7 @@ public class UserServiceImpl implements UserService {
             throw new InvalidParameterException("Invalid details provided");
         }
 
-        userRepository.findById(id).orElseThrow(()->
+        User usr=userRepository.findById(id).orElseThrow(()->
              new NotFoundException("User with provided id not found"));
 
 
@@ -153,10 +153,8 @@ public class UserServiceImpl implements UserService {
 
             user.getRoles().addAll(roles);
 
-            user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-            //Username has to be unique (exception)
-            //user.setUsername(newUser.getUsername());
-            // Make sure that password and confirmPassword match
+            user.setPassword((usr.getPassword()));
+
             if (user.getRoles() != null && !user.getRoles().isEmpty()) {
                 try {
                     return userRepository.save(user);
@@ -221,9 +219,9 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User findById(Integer id) {
-        User user= userRepository.findById(id).orElseThrow(() ->
+        return userRepository.findById(id).orElseThrow(() ->
                 new NotFoundException("User not found"));
-        //user.setPassword("");
-        return user;
+
+
     }
 }

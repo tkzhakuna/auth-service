@@ -640,3 +640,207 @@
 19:10:01.881 [main] INFO  com.auth.AuthApplication - Started AuthApplication in 5.593 seconds (JVM running for 6.213) 
 19:10:07.470 [http-nio-9004-exec-1] INFO  o.a.c.c.C.[.[.[/user-auth] - Initializing Spring DispatcherServlet 'dispatcherServlet' 
 19:10:07.711 [http-nio-9004-exec-1] WARN  o.s.s.c.b.BCryptPasswordEncoder - Empty encoded password 
+22:34:03.455 [main] INFO  com.auth.AuthApplication - Starting AuthApplication using Java 15.0.2 on DESKTOP-U5OJAG4 with PID 17008 (C:\IdeaProjects\cloud services\unipay-auth\target\classes started by TawanaNyasha in C:\IdeaProjects\cloud services\unipay-auth) 
+22:34:03.472 [main] INFO  com.auth.AuthApplication - The following profiles are active: dev 
+22:34:07.428 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+22:34:07.771 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 303 ms. Found 2 JPA repository interfaces. 
+22:34:08.089 [main] INFO  o.s.c.context.scope.GenericScope - BeanFactory id=d20b9097-a61c-33b7-9e98-bc4409342189 
+22:34:08.380 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.auth.config.EmployeeFiegnClient' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
+22:34:08.667 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@1b7f06c7' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
+22:34:08.676 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
+22:34:09.242 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9004 (http) 
+22:34:09.262 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat] 
+22:34:09.265 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.41] 
+22:34:09.616 [main] INFO  o.a.c.c.C.[.[.[/user-auth] - Initializing Spring embedded WebApplicationContext 
+22:34:09.623 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 5999 ms 
+22:34:09.737 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+22:34:10.198 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default] 
+22:34:10.359 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.27.Final 
+22:34:11.056 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final} 
+22:34:11.532 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting... 
+22:34:12.379 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed. 
+22:34:12.427 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect 
+22:34:14.913 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+22:34:14.943 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default' 
+22:34:18.059 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)] 
+22:34:18.567 [main] INFO  o.s.s.w.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7afac89a, org.springframework.security.web.context.SecurityContextPersistenceFilter@6a3c1b56, org.springframework.security.web.header.HeaderWriterFilter@4a937d43, org.springframework.web.filter.CorsFilter@76d220eb, org.springframework.security.web.authentication.logout.LogoutFilter@6715a6da, com.auth.security.JwtAuthenticationFilter@1fb00a6d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3ce4eb42, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4257163f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@276eafad, org.springframework.security.web.session.SessionManagementFilter@25134e01, org.springframework.security.web.access.ExceptionTranslationFilter@7acf07b2, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1b1d93e9] 
+22:34:18.657 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor' 
+22:34:19.426 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 9004 (http) with context path '/user-auth' 
+22:34:19.602 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed 
+22:34:19.620 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s) 
+22:34:19.666 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references 
+22:34:19.948 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: findAllUsingGET_1 
+22:34:19.953 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: findByIdUsingGET_1 
+22:34:19.997 [main] INFO  com.auth.AuthApplication - Started AuthApplication in 18.435 seconds (JVM running for 20.567) 
+22:34:33.918 [http-nio-9004-exec-1] INFO  o.a.c.c.C.[.[.[/user-auth] - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+22:34:35.020 [http-nio-9004-exec-1] WARN  o.s.s.c.b.BCryptPasswordEncoder - Empty encoded password 
+22:36:28.816 [main] INFO  com.auth.AuthApplication - Starting AuthApplication using Java 15.0.2 on DESKTOP-U5OJAG4 with PID 9568 (C:\IdeaProjects\cloud services\unipay-auth\target\classes started by TawanaNyasha in C:\IdeaProjects\cloud services\unipay-auth) 
+22:36:28.819 [main] INFO  com.auth.AuthApplication - The following profiles are active: dev 
+22:36:30.276 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+22:36:30.407 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 118 ms. Found 2 JPA repository interfaces. 
+22:36:30.718 [main] INFO  o.s.c.context.scope.GenericScope - BeanFactory id=d20b9097-a61c-33b7-9e98-bc4409342189 
+22:36:30.786 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.auth.config.EmployeeFiegnClient' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
+22:36:30.885 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@6f31df32' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
+22:36:30.890 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
+22:36:31.196 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9004 (http) 
+22:36:31.207 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat] 
+22:36:31.207 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.41] 
+22:36:31.454 [main] INFO  o.a.c.c.C.[.[.[/user-auth] - Initializing Spring embedded WebApplicationContext 
+22:36:31.455 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2580 ms 
+22:36:31.532 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+22:36:31.704 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default] 
+22:36:31.776 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.27.Final 
+22:36:31.937 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final} 
+22:36:32.049 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting... 
+22:36:32.427 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed. 
+22:36:32.467 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect 
+22:36:33.758 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+22:36:33.781 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default' 
+22:36:35.198 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)] 
+22:36:35.529 [main] INFO  o.s.s.w.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@f943847, org.springframework.security.web.context.SecurityContextPersistenceFilter@fc6cac6, org.springframework.security.web.header.HeaderWriterFilter@2c5b4b91, org.springframework.web.filter.CorsFilter@4c376b44, org.springframework.security.web.authentication.logout.LogoutFilter@43e9a8a2, com.auth.security.JwtAuthenticationFilter@53335328, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3d0697da, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1e284d90, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@47596e9, org.springframework.security.web.session.SessionManagementFilter@1a3e8b68, org.springframework.security.web.access.ExceptionTranslationFilter@603a34e5, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7d50b4c4] 
+22:36:35.610 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor' 
+22:36:36.163 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 9004 (http) with context path '/user-auth' 
+22:36:36.329 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed 
+22:36:36.347 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s) 
+22:36:36.399 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references 
+22:36:36.669 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: findAllUsingGET_1 
+22:36:36.673 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: findByIdUsingGET_1 
+22:36:36.715 [main] INFO  com.auth.AuthApplication - Started AuthApplication in 8.751 seconds (JVM running for 10.065) 
+22:36:42.193 [http-nio-9004-exec-1] INFO  o.a.c.c.C.[.[.[/user-auth] - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+22:36:42.843 [http-nio-9004-exec-1] WARN  o.s.s.c.b.BCryptPasswordEncoder - Empty encoded password 
+22:40:09.399 [http-nio-9004-exec-1] INFO  com.auth.controller.UserController - Request to add user 
+22:41:57.595 [main] INFO  com.auth.AuthApplication - Starting AuthApplication using Java 15.0.2 on DESKTOP-U5OJAG4 with PID 13320 (C:\IdeaProjects\cloud services\unipay-auth\target\classes started by TawanaNyasha in C:\IdeaProjects\cloud services\unipay-auth) 
+22:41:57.599 [main] INFO  com.auth.AuthApplication - The following profiles are active: dev 
+22:41:58.974 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+22:41:59.061 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 78 ms. Found 2 JPA repository interfaces. 
+22:41:59.295 [main] INFO  o.s.c.context.scope.GenericScope - BeanFactory id=d20b9097-a61c-33b7-9e98-bc4409342189 
+22:41:59.381 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.auth.config.EmployeeFiegnClient' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
+22:41:59.479 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@19e21f89' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
+22:41:59.487 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
+22:41:59.816 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9004 (http) 
+22:41:59.828 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat] 
+22:41:59.828 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.41] 
+22:42:00.057 [main] INFO  o.a.c.c.C.[.[.[/user-auth] - Initializing Spring embedded WebApplicationContext 
+22:42:00.057 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2412 ms 
+22:42:00.140 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+22:42:00.305 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default] 
+22:42:00.355 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.27.Final 
+22:42:00.475 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final} 
+22:42:00.584 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting... 
+22:42:00.815 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed. 
+22:42:00.836 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect 
+22:42:01.952 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+22:42:01.966 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default' 
+22:42:03.268 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)] 
+22:42:03.566 [main] INFO  o.s.s.w.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4b8c9729, org.springframework.security.web.context.SecurityContextPersistenceFilter@27a23d87, org.springframework.security.web.header.HeaderWriterFilter@1e284d90, org.springframework.web.filter.CorsFilter@1ae26c59, org.springframework.security.web.authentication.logout.LogoutFilter@3054cdd3, com.auth.security.JwtAuthenticationFilter@4d7f9b33, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2cbae0f1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@74ed1d35, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@15ade272, org.springframework.security.web.session.SessionManagementFilter@6e161cea, org.springframework.security.web.access.ExceptionTranslationFilter@33efa7d4, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4a76c90] 
+22:42:03.655 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor' 
+22:42:04.359 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 9004 (http) with context path '/user-auth' 
+22:42:04.603 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed 
+22:42:04.645 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s) 
+22:42:04.720 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references 
+22:42:05.039 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: findAllUsingGET_1 
+22:42:05.044 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: findByIdUsingGET_1 
+22:42:05.111 [main] INFO  com.auth.AuthApplication - Started AuthApplication in 8.225 seconds (JVM running for 9.239) 
+22:42:07.839 [http-nio-9004-exec-1] INFO  o.a.c.c.C.[.[.[/user-auth] - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+22:42:07.955 [http-nio-9004-exec-1] INFO  com.auth.controller.UserController - Request to add user 
+22:49:00.850 [main] INFO  com.auth.AuthApplication - Starting AuthApplication using Java 15.0.2 on DESKTOP-U5OJAG4 with PID 17256 (C:\IdeaProjects\cloud services\unipay-auth\target\classes started by TawanaNyasha in C:\IdeaProjects\cloud services\unipay-auth) 
+22:49:00.850 [main] INFO  com.auth.AuthApplication - The following profiles are active: dev 
+22:49:02.563 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+22:49:02.672 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 97 ms. Found 2 JPA repository interfaces. 
+22:49:02.907 [main] INFO  o.s.c.context.scope.GenericScope - BeanFactory id=d20b9097-a61c-33b7-9e98-bc4409342189 
+22:49:02.972 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.auth.config.EmployeeFiegnClient' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
+22:49:03.089 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@6ad179b4' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
+22:49:03.096 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
+22:49:03.458 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9004 (http) 
+22:49:03.469 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat] 
+22:49:03.469 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.41] 
+22:49:03.738 [main] INFO  o.a.c.c.C.[.[.[/user-auth] - Initializing Spring embedded WebApplicationContext 
+22:49:03.740 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2833 ms 
+22:49:03.837 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+22:49:04.020 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default] 
+22:49:04.117 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.27.Final 
+22:49:04.298 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final} 
+22:49:04.417 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting... 
+22:49:04.838 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed. 
+22:49:04.859 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect 
+22:49:06.312 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+22:49:06.337 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default' 
+22:49:07.708 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)] 
+22:49:08.017 [main] INFO  o.s.s.w.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6a233d33, org.springframework.security.web.context.SecurityContextPersistenceFilter@7f97e963, org.springframework.security.web.header.HeaderWriterFilter@33efa7d4, org.springframework.web.filter.CorsFilter@7da0587a, org.springframework.security.web.authentication.logout.LogoutFilter@6a3c1b56, com.auth.security.JwtAuthenticationFilter@2de82bf8, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6e161cea, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5af47414, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@78d52d4c, org.springframework.security.web.session.SessionManagementFilter@2dc72c0c, org.springframework.security.web.access.ExceptionTranslationFilter@723081a2, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1d82d35c] 
+22:49:08.071 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor' 
+22:49:08.702 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 9004 (http) with context path '/user-auth' 
+22:49:08.836 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed 
+22:49:08.863 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s) 
+22:49:08.916 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references 
+22:49:09.295 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: findAllUsingGET_1 
+22:49:09.306 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: findByIdUsingGET_1 
+22:49:09.389 [main] INFO  com.auth.AuthApplication - Started AuthApplication in 9.242 seconds (JVM running for 10.237) 
+22:49:16.363 [http-nio-9004-exec-1] INFO  o.a.c.c.C.[.[.[/user-auth] - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+22:49:17.549 [http-nio-9004-exec-1] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 1048, SQLState: 23000 
+22:49:17.550 [http-nio-9004-exec-1] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Column 'password' cannot be null 
+22:50:08.412 [main] INFO  com.auth.AuthApplication - Starting AuthApplication using Java 15.0.2 on DESKTOP-U5OJAG4 with PID 7184 (C:\IdeaProjects\cloud services\unipay-auth\target\classes started by TawanaNyasha in C:\IdeaProjects\cloud services\unipay-auth) 
+22:50:08.413 [main] INFO  com.auth.AuthApplication - The following profiles are active: dev 
+22:50:09.829 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+22:50:09.928 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 88 ms. Found 2 JPA repository interfaces. 
+22:50:10.133 [main] INFO  o.s.c.context.scope.GenericScope - BeanFactory id=d20b9097-a61c-33b7-9e98-bc4409342189 
+22:50:10.209 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.auth.config.EmployeeFiegnClient' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
+22:50:10.288 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@feb098f' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
+22:50:10.292 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
+22:50:10.591 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9004 (http) 
+22:50:10.598 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat] 
+22:50:10.598 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.41] 
+22:50:10.849 [main] INFO  o.a.c.c.C.[.[.[/user-auth] - Initializing Spring embedded WebApplicationContext 
+22:50:10.849 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2382 ms 
+22:50:10.969 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+22:50:11.184 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default] 
+22:50:11.235 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.27.Final 
+22:50:11.383 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final} 
+22:50:11.533 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting... 
+22:50:11.821 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed. 
+22:50:11.840 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect 
+22:50:12.952 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+22:50:12.968 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default' 
+22:50:14.657 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)] 
+22:50:15.071 [main] INFO  o.s.s.w.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4b8c9729, org.springframework.security.web.context.SecurityContextPersistenceFilter@3bf4b018, org.springframework.security.web.header.HeaderWriterFilter@5d3d5242, org.springframework.web.filter.CorsFilter@1ae26c59, org.springframework.security.web.authentication.logout.LogoutFilter@1002c49e, com.auth.security.JwtAuthenticationFilter@2643ed03, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@55d98bbb, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@54fbaa65, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@15ade272, org.springframework.security.web.session.SessionManagementFilter@72155315, org.springframework.security.web.access.ExceptionTranslationFilter@50b78155, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4a76c90] 
+22:50:15.139 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor' 
+22:50:16.219 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 9004 (http) with context path '/user-auth' 
+22:50:16.579 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed 
+22:50:16.627 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s) 
+22:50:16.716 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references 
+22:50:17.138 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: findAllUsingGET_1 
+22:50:17.143 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: findByIdUsingGET_1 
+22:50:17.203 [main] INFO  com.auth.AuthApplication - Started AuthApplication in 9.497 seconds (JVM running for 10.405) 
+22:50:22.044 [http-nio-9004-exec-1] INFO  o.a.c.c.C.[.[.[/user-auth] - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+22:51:39.642 [main] INFO  com.auth.AuthApplication - Starting AuthApplication using Java 15.0.2 on DESKTOP-U5OJAG4 with PID 8600 (C:\IdeaProjects\cloud services\unipay-auth\target\classes started by TawanaNyasha in C:\IdeaProjects\cloud services\unipay-auth) 
+22:51:39.642 [main] INFO  com.auth.AuthApplication - The following profiles are active: dev 
+22:51:41.046 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+22:51:41.132 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 78 ms. Found 2 JPA repository interfaces. 
+22:51:41.390 [main] INFO  o.s.c.context.scope.GenericScope - BeanFactory id=d20b9097-a61c-33b7-9e98-bc4409342189 
+22:51:41.495 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.auth.config.EmployeeFiegnClient' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
+22:51:41.627 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@feb098f' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
+22:51:41.635 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
+22:51:42.003 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9004 (http) 
+22:51:42.011 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat] 
+22:51:42.011 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.41] 
+22:51:42.309 [main] INFO  o.a.c.c.C.[.[.[/user-auth] - Initializing Spring embedded WebApplicationContext 
+22:51:42.310 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2604 ms 
+22:51:42.404 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+22:51:42.545 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default] 
+22:51:42.606 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.27.Final 
+22:51:42.747 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final} 
+22:51:42.890 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting... 
+22:51:43.097 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed. 
+22:51:43.119 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect 
+22:51:44.378 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+22:51:44.406 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default' 
+22:51:45.869 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)] 
+22:51:46.224 [main] INFO  o.s.s.w.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2c376461, org.springframework.security.web.context.SecurityContextPersistenceFilter@27a23d87, org.springframework.security.web.header.HeaderWriterFilter@1e284d90, org.springframework.web.filter.CorsFilter@27244a88, org.springframework.security.web.authentication.logout.LogoutFilter@3054cdd3, com.auth.security.JwtAuthenticationFilter@4d7f9b33, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2cbae0f1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@74ed1d35, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4a76c90, org.springframework.security.web.session.SessionManagementFilter@6e161cea, org.springframework.security.web.access.ExceptionTranslationFilter@33efa7d4, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@20843604] 
+22:51:46.289 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor' 
+22:51:46.858 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 9004 (http) with context path '/user-auth' 
+22:51:47.033 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed 
+22:51:47.053 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s) 
+22:51:47.100 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references 
+22:51:47.403 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: findAllUsingGET_1 
+22:51:47.409 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: findByIdUsingGET_1 
+22:51:47.481 [main] INFO  com.auth.AuthApplication - Started AuthApplication in 8.656 seconds (JVM running for 9.646) 
+22:51:51.198 [http-nio-9004-exec-1] INFO  o.a.c.c.C.[.[.[/user-auth] - Initializing Spring DispatcherServlet 'dispatcherServlet' 

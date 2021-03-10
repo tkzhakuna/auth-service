@@ -40,10 +40,10 @@ public class User implements UserDetails {
     private String username;
     @NotBlank(message = "Please enter your full name")
     private String fullname;
-    //@JsonIgnore
+    @JsonIgnore
     @NotBlank(message = "Password field is required")
     private String password;
-    //@JsonIgnore
+    @JsonIgnore
     @Transient
     private String confirmPassword;
     @CreatedDate
