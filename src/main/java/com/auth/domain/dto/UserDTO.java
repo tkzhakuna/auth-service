@@ -25,7 +25,7 @@ public class UserDTO {
     //@JsonIgnore
     @Transient
     private String confirmPassword;
-    private Integer employeeId;
+    //private Integer employeeId;
 
     @Override
     public String toString() {
@@ -34,7 +34,7 @@ public class UserDTO {
                 ", fullname='" + fullname + '\'' +
                 ", password='" + password + '\'' +
                 ", confirmPassword='" + confirmPassword + '\'' +
-                ", employeeId=" + employeeId +
+
                 '}';
     }
 }

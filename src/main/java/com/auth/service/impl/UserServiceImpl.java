@@ -36,16 +36,15 @@ public class UserServiceImpl implements UserService {
     private final EntityManager entityManager;
     private final RoleRepository roleRepository;
     private final EmployeeFiegnClient employeeFiegnClient;//implement feign
-
-    @Autowired
-    private BCryptPasswordEncoder bCryptPasswordEncoder;
+    private final BCryptPasswordEncoder bCryptPasswordEncoder;
 
     public UserServiceImpl(UserRepository userRepository, EntityManager entityManager,
-                           RoleRepository roleRepository, EmployeeFiegnClient employeeFiegnClient) {
+                           RoleRepository roleRepository, EmployeeFiegnClient employeeFiegnClient, BCryptPasswordEncoder bCryptPasswordEncoder) {
         this.userRepository = userRepository;
         this.entityManager = entityManager;
         this.roleRepository = roleRepository;
         this.employeeFiegnClient = employeeFiegnClient;
+        this.bCryptPasswordEncoder = bCryptPasswordEncoder;
     }
 
     @Override
@@ -64,39 +63,41 @@ public class UserServiceImpl implements UserService {
         }
 
 
-        EmployeeDTO employee;
-        if (!Objects.isNull(userDTO.getEmployeeId()) && userDTO.getEmployeeId() > 0) {
-            try {
-                //check employee
-                employee = employeeFiegnClient.findById(userDTO.getEmployeeId()).getBody();
-            } catch (Exception ex) {
-                throw new UnexpectedException("Employee details not found, Please make sure user is registered in the employee details");
-            }
-
-            if (Objects.isNull(employee.getId())) {
-                throw new NotFoundException("Employee not found ");
-            }
-
-            //check if emails match
-            if (employee.getEmail() == null || !employee.getEmail().equals(userDTO.getUsername())) {
-                throw new NotFoundException("Employee with provided email not found");
-            }
-        } else {
-            throw new InvalidParameterException("Invalid Employee Id supplied");
-        }
-
-        if (!Objects.isNull(employee.getId())) {
-            //Add Employee
-            user.setEmployeeId(employee.getId());
-        }
+//        EmployeeDTO employee;
+//        if (!Objects.isNull(userDTO.getEmployeeId()) && userDTO.getEmployeeId() > 0) {
+//            try {
+//                //check employee
+//                employee = employeeFiegnClient.findById(userDTO.getEmployeeId()).getBody();
+//            } catch (Exception ex) {
+//                throw new UnexpectedException("Employee details not found, Please make sure user is registered in the employee details");
+//            }
+//
+//            if (Objects.isNull(employee.getId())) {
+//                throw new NotFoundException("Employee not found ");
+//            }
+//
+//            //check if emails match
+//            if (employee.getEmail() == null || !employee.getEmail().equals(userDTO.getUsername())) {
+//                throw new NotFoundException("Employee with provided email not found");
+//            }
+//        } else {
+//            throw new InvalidParameterException("Invalid Employee Id supplied");
+//        }
+//
+//        if (!Objects.isNull(employee.getId())) {
+//            //Add Employee
+//            user.setEmployeeId(employee.getId());
+//        }
 
 
         try {
             user.setStatus(1);
             user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
             user.setConfirmPassword("");
+
             user = userRepository.save(user);
             BeanUtils.copyProperties(user, userDTO);
+            userDTO.setPassword("");
             return userDTO;
         } catch (Exception ex) {
             throw new UnexpectedException("Error saving User: " + ex.getLocalizedMessage());
@@ -127,26 +128,33 @@ public class UserServiceImpl implements UserService {
             if (strRoles != null) {
                 strRoles.forEach(role -> {
                     switch (role) {
-                        case "admin" -> {
+                        case "admin":
+                            {
                             Role adminRole = roleRepository.findByName(ERole.ROLE_ADMIN)
                                     .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
                             if(!existingRoles.contains(adminRole.getName().toString())) {
                                roles.add(adminRole);
                             }
                         }
-                        case "user" -> {
+                        break;
+                        case "user":
+                            {
                             Role userRole = roleRepository.findByName(ERole.ROLE_USER)
                                     .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
                             if(!existingRoles.contains(userRole.getName().toString()))
                             roles.add(userRole);
                         }
-                        case "super" -> {
+                        break;
+                        case "super":
+                            {
                             Role superRole = roleRepository.findByName(ERole.ROLE_SUPER)
                                     .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
                             if(!existingRoles.contains(superRole.getName().toString()))
                             roles.add(superRole);
                         }
-                        default -> throw new RuntimeException("Error: Role is not found.");
+                        break;
+                        default:
+                            throw new RuntimeException("Error: Role is not found.");
                     }
                 });
             }

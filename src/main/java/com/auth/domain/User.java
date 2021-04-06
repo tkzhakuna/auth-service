@@ -52,8 +52,8 @@ public class User implements UserDetails {
     @Column(name="status")
 	private Integer status;
 
-    @Column(name="employee_id")
-    private Integer employeeId;
+//    @Column(name="employee_id")
+//    private Integer employeeId;
 
     @ManyToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
 	@JoinTable(	name = "user_roles", 
@@ -79,13 +79,13 @@ public class User implements UserDetails {
      */
     @Transient
     private Collection<? extends GrantedAuthority> authorities;
-    public User(Integer id, String username, String fullname, String password,Integer employeeId,
+    public User(Integer id, String username, String fullname, String password,
 			Collection<GrantedAuthority> authorities) {
 		this.id = id;
 		this.username = username;
 		this.fullname = fullname;
 		this.password = password;
-		this.employeeId=employeeId;
+		//this.employeeId=employeeId;
 		this.authorities = authorities;
 	}
 
@@ -100,7 +100,7 @@ public class User implements UserDetails {
 				getUsername(), 
 				getFullname(),
 				getPassword(), 
-				getEmployeeId(),
+				//getEmployeeId(),
 				authorities);
 	}
     
