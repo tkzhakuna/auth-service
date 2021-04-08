@@ -91,6 +91,14 @@ public class UserServiceImpl implements UserService {
 
 
         try {
+            Set<Role> roles = new HashSet<>();
+            Role adminRole = roleRepository.findByName(ERole.ROLE_ADMIN)
+                    .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
+            roles.add(adminRole);
+            user.setRoles(roles);
+
+
+
             user.setStatus(1);
             user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
             user.setConfirmPassword("");
